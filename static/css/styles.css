@@ -1,0 +1,85 @@
+body {
+  background: linear-gradient(120deg, #f6f9fc, #e0f7fa);
+  font-family: 'Poppins', sans-serif;
+  padding: 30px;
+}
+
+h1, h2 {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card-body {
+  padding: 20px;
+  background-color: #fff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.badge {
+  background-color: #e3f2fd;
+  color: #0277bd;
+  margin-right: 5px;
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  border-radius: 10px;
+}
+
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  padding: 8px 14px;
+}
+
+.btn-warning {
+  background-color: #ffb74d;
+  border: none;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #e57373;
+  border: none;
+  color: #fff;
+}
+
+.btn-warning:hover {
+  background-color: #ffa726;
+}
+
+.btn-danger:hover {
+  background-color: #ef5350;
+}
