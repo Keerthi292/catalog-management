@@ -51,11 +51,14 @@ def insert():
         image_id = str(uuid.uuid4()) + os.path.splitext(filename)[1]
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], image_id))
 
+        # Only include non-empty attributes
         attributes = {}
         for key in request.form:
             if key.startswith('attr_'):
                 attr_name = key.replace('attr_', '')
-                attributes[attr_name] = request.form[key]
+                value = request.form[key].strip()
+                if value:  # Only add non-empty values
+                    attributes[attr_name] = value
 
         product = {
             '_id': str(uuid.uuid4()),
@@ -64,8 +67,12 @@ def insert():
             'description': request.form['description'],
             'type': request.form['type'],
             'image': image_id,
-            'attributes': attributes
         }
+
+        # Only add 'attributes' if there are any
+        if attributes:
+            product['attributes'] = attributes
+
         products_collection.insert_one(product)
         return redirect('/')
     
